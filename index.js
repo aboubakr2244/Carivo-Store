@@ -4,6 +4,7 @@ dotenv.config();
 const connectDB = require("./Config/db");
 const authRoute = require("./Routes/authRoute");
 const userRoute = require("./Routes/userRoute");
+const categoryRoute = require("./Routes/categoryRoute");
 
 const app = express();
 
@@ -13,6 +14,7 @@ connectDB();
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
+app.use("/api/categories", categoryRoute);
 
 const port = process.env.PORT;
 
